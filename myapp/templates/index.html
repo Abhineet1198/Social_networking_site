@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <title>Home page</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1 class="text-primary">ChatBook</h1>
+        </div>
+        <div class="col-lg-6">
+            {% for i in messages %}
+            <p>Invalid Username or Password</p>
+            {% endfor %}
+                <form action="" method="post">
+                {% csrf_token %}
+                <div><label class="form-control">User Name</label></div>
+                <div><input class="form-control" type="text" name="username" placeholder="Enter Username"></div>
+                <div><label class="form-control">Password</label></div>
+                <div><input class="form-control" type="password" name="password" placeholder="Enter Password"></div>
+                <button style="display:block; width:100%" class="btn btn-primary btn-block" type="submit">Login </button>
+                <div style="text-align:center"><a  href=" ">Forgotten Password</a></div>
+                <div><a  style="display:block; width:100%"  class="btn btn-success " href="/signup/">Create Account</a></div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

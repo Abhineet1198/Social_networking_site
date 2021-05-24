@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}
+  <title>Profile</title>
+  {% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+<nav class="navbar bg-info">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">ChatBook</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/profile2/">Profile</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+      <ul>
+              <form class="navbar-form navbar-left" action="/action_page.php">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                      </button>
+                    </div>
+                  </div>
+              </form>
+      </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout/"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+    </ul>
+  </div>
+</nav>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-m-16">
+      <a href="/profile2/">{{User.firstname}}  {{User.surname}}</a>
+    </div>
+    <div class="col-lg-6 col-m-16">
+      <h3>Post</h3>
+    </div>
+    <div class="col-lg-3 col-m-16">
+      <h3>Messages</h3>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+</body>
+
+</html>

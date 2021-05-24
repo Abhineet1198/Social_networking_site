@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <title>Signup</title>
+</head>
+<body>
+<div class="container">
+   <div class="row">
+       <div class="col-lg-9">
+           <form class="form-control" action="" method="post">
+               {% csrf_token %}
+               <div class="row">
+                   <div class="col-lg-3">
+                       <label class="form-control">Name</label>
+                   </div>
+                    <div class="col-lg-6">
+                         <input class="form-control" type="text" name="firstname" placeholder="Enter First name">
+                    </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Surname</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="text" name="surname" placeholder="Enter Surname">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Email Id</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="text" name="username" placeholder="Enter Username (EmailId or Mobile number)">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Password</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="password" name="password" placeholder="Enter Password">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">DOB</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="date" name="dob">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Gender</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input type="radio" name="gender" value="male" checked> Male
+                       <input type="radio" name="gender" value="female"> Female
+                       <input type="radio" name="gender" value="other"> Other
+                   </div>
+               </div>
+               <button class="btn btn-success" style="display:block;width:100%"  type="submit">Signup</button>
+
+
+           </form>
+       </div>
+    </div>
+</div>
+
+
+</body>
+</html>
