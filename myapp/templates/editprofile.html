@@ -1,3 +1,109 @@
 {% extends 'profile.html' %}
 {% load static %}
 {% block body %}
+<div class="container">
+   <div class="row">
+       <div class="col-lg-9">
+           <form action="" method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+               <div class="row">
+                   <div class="col-lg-3">
+                       <label class="form-control">Name</label>
+                   </div>
+                    <div class="col-lg-6">
+                         <input class="form-control" type="text" name="firstname" placeholder="Enter First name" value="{{User.firstname}}">
+                    </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Surname</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="text" name="surname" placeholder="Enter Surname" value="{{User.surname}}">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Email Id</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="text" name="email" placeholder="Enter your EmailId" value="{{User.email}}">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">DOB</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="date" name="dob" value="{{User.dob}}">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Gender</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input type="radio" name="gender" value="male" checked> Male
+                       <input type="radio" name="gender" value="female"> Female
+                       <input type="radio" name="gender" value="other"> Other
+                   </div>
+               </div>
+                <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">photo</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input type="file" name="img">
+                   </div>
+               </div>
+                <div class="row">
+                   <div class="col-lg-3">
+                       <label class="form-control">Work</label>
+                   </div>
+                    <div class="col-lg-6">
+                         <input class="form-control" type="text" name="work" placeholder="Where you currently work" value="{{User.work}}">
+                    </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Education</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="text" name="qualification" placeholder="Enter your qualification" value="{{User.qualification}}">
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                       <label class="form-control">Current Town</label>
+                   </div>
+                    <div class="col-lg-6">
+                         <input class="form-control" type="text" name="ctown" placeholder="Enter your Current Town" value="{{User.currentTown}}">
+                    </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Home Town</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="text" name="htown" placeholder="Enter your Home town" value="{{User.HomeTown}}">
+                   </div>
+               </div>
+                <div class="row">
+                   <div class="col-lg-3">
+                        <label class="form-control">Relationship</label>
+                   </div>
+                   <div class="col-lg-6">
+                       <input class="form-control" type="text" name="relationship" placeholder="Enter your relationship" value="{{User.relationship}}">
+                   </div>
+               </div>
+
+
+               <button class="btn btn-success" style="display:block;width:75%"  type="submit">EDIT</button>
+
+
+           </form>
+       </div>
+    </div>
+</div>
+
+{% endblock %}

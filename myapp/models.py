@@ -20,5 +20,14 @@ class AccountUser(models.Model):
     def __str__(self):
         return self.firstname + " " + self.surname + " " + self.username
 
+class Post(models.Model):
+    pid=models.AutoField(primary_key=True)
+    user=models.ForeignKey(AccountUser,on_delete=models.CASCADE)
+    pic=models.ImageField(upload_to='images',default=None,blank=True,null=True)
+    content=models.TextField()
+    dt=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.pid) + " " + self.user.firstname
 
 

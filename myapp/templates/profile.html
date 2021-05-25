@@ -55,7 +55,27 @@
       <a href="/profile2/">{{User.firstname}}  {{User.surname}}</a>
     </div>
     <div class="col-lg-6 col-m-16">
-      <h3>Post</h3>
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if User.img %}
+        <img class="img-circle" src="{{User.img.url}}" width="12%">
+        {% endif %}
+        <input type="text" name="msg" placeholder="What's on your mind..">
+        <input type="file" name="img"/>
+        <button class="btn btn-primary" style="display:block;width:45%" type="submit">Post</button>
+      </form>
+      {% for i in Post %}
+      <hr>
+       {% if i.user.img %}
+      <h4><img class="img-circle" src="{{i.user.img.url}}" width="12%" >{{i.user.firstname}} {{i.user.surname}}</h4>
+      {% endif %}
+      {% if i.pic %}
+      <img src="{{i.pic.url}}" width="80%">
+      {% endif %}
+      <p>{{i.content}}</p>
+      {% endfor %}
+
+
     </div>
     <div class="col-lg-3 col-m-16">
       <h3>Messages</h3>

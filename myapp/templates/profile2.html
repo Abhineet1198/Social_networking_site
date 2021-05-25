@@ -11,8 +11,6 @@
             <br>
             <br>
             <br>
-            <br>
-            <br>
              <h3 class="form-control">EmailId</h3>
              <h3 class="form-control">DOB</h3>
              <h3 class="form-control">Education</h3>
@@ -23,9 +21,11 @@
              <h3 class="form-control">Friend</h3>
         </div>
         <div class="col-lg-6">
-            <img src="{{User.img.url}}" width="30%" class="img-circle"><br>
-            <h3 style="color:blue">{{User.firstname}} {{User.surname}}</h3>
-            <label style="font-size:30px;"><a href="">Edit</a></label>
+            {% if User.img %}
+            <img src="{{User.img.url}}" width="35%" class="img-circle">
+            {% endif %}
+            <h3 style="color:blue">{{User.firstname}} {{User.surname}} <small>   <a href="/editprofile/">Edit</a></small></h3>
+
             <div class="col-lg-6">
                 <h3 class="form-control">{{User.email}}</h3>
                 <h3 class="form-control">{{User.dob}}</h3>
