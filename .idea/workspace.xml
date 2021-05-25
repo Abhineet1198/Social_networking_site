@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ac002dd5-ec64-4915-9d20-24b5e1732272" name="Default Changelist" comment="updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chatbook/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatbook/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chatbook/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/editprofile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/templates/profile2.html" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/templates/profile2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

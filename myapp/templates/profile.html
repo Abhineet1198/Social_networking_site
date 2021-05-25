@@ -12,8 +12,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<style>
+  p{
+    color:blue;
+    }
 
-
+</style>
 
 <nav class="navbar bg-info">
   <div class="container-fluid">
@@ -65,17 +69,23 @@
         <button class="btn btn-primary" style="display:block;width:45%" type="submit">Post</button>
       </form>
       {% for i in Post %}
-      <hr>
-       {% if i.user.img %}
-      <h4><img class="img-circle" src="{{i.user.img.url}}" width="12%" >{{i.user.firstname}} {{i.user.surname}}</h4>
-      {% endif %}
-      {% if i.pic %}
-      <img src="{{i.pic.url}}" width="80%">
-      {% endif %}
-      <p>{{i.content}}</p>
+      {% if i.user.img %}
+      <div style="border:2px solid; color:#8ff8ff">
+        <p><img class="img-circle" src="{{i.user.img.url}}" width="12%">  <strong style="font-size:20px">{{i.user.firstname}} {{i.user.surname}}</strong><small>  {{i.dt}}</small></p>
+        <br>
+        <p>{{i.content}}</p>
+        {% endif %}
+        <hr>
+        {% if i.pic %}
+        <img src="{{i.pic.url}}" width="100%">
+        <hr>
+        {% endif %}
+        <a  href=""><img src="{% static 'images/like.jpg' %}" width="25%"></a>
+        <a  href=""><img src="{% static 'images/comment.png' %}" width="25%"></a>
+        <a  href=""><img src="{% static 'images/share.png' %}" width="25%"></a>
+      </div>
+      <br>
       {% endfor %}
-
-
     </div>
     <div class="col-lg-3 col-m-16">
       <h3>Messages</h3>

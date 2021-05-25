@@ -42,6 +42,7 @@ def profile(request):
         return HttpResponseRedirect('/admin/')
     user=AccountUser.objects.get(username=request.user)
     post = Post.objects.all()
+    post=post[::-1]
     if(request.method == "POST"):
         p = Post()
         p.user=user
