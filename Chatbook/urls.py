@@ -16,5 +16,9 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('profile2/', views.profile2, name='profile2'),
     path('editprofile/', views.editprofile, name='editprofile'),
+    path('forget/', views.forgetpassword, name='forget'),
+    path('otp/', views.otpOption, name='otp'),
+    path('resetpassword/', views.resetPassword, name='reset'),
+    path('like/<int:pid>/<int:uid>/', views.likesystem),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=MEDIA_ROOT)

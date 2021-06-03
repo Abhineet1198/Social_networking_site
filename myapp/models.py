@@ -16,7 +16,6 @@ class AccountUser(models.Model):
     relationship=models.CharField(max_length=50, default=None,blank=True,null=True)
     otp=models.IntegerField(default=None,blank=True,null=True)
 
-
     def __str__(self):
         return self.firstname + " " + self.surname + " " + self.username
 
@@ -26,8 +25,16 @@ class Post(models.Model):
     pic=models.ImageField(upload_to='images',default=None,blank=True,null=True)
     content=models.TextField()
     dt=models.DateTimeField(auto_now_add=True)
+    video = models.FileField(upload_to='images', default=None, blank=True, null=True)
 
     def __str__(self):
         return str(self.pid) + " " + self.user.firstname
+
+class Like(models.Model):
+    lid=models.AutoField(primary_key =True)
+    post=models.OneToOneField(Post,on_delete=models.CASCADE,default=None,blank=True,null=True)
+    user=models.ManyToManyField(AccountUser,default=None,blank=True)
+    counter=models.IntegerField(default=0)
+
 
 
