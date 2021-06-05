@@ -83,7 +83,8 @@ def forgetpassword(request):
     if (request.method == "POST"):
         email = request.POST.get('email')
         otp = randint(1000, 9999)
-        msg = str(otp) + "This is one time password /n Please enter otp to reset password"
+        print(type(otp))
+        msg = str(otp) + "This is one time password \n Please enter otp to reset password"
         send_mailUser(email,msg)
         return HttpResponseRedirect('/otp/')
     else:
@@ -91,7 +92,8 @@ def forgetpassword(request):
 
 def otpOption(request):
     if(request.method=="POST"):
-        inputotp=request.POST.grt('otp')
+        inputotp=request.POST.get('otp')
+        print(inputotp)
         if(int(inputotp)==int(otp)):
             return HttpResponseRedirect('/resetpassword/')
         else:
@@ -137,13 +139,13 @@ def editprofile(request):
         return HttpResponseRedirect('/profile2/')
     return render(request,'editprofile.html',{"User":user})
 
-def likesystem(request,pid,uid):
+def likesystem(request,uid,pid):
     post=Post.objects.get(pid=pid)
     user=AccountUser.objects.get(uid=uid)
     try:
         like=Like.objects.get(post=post)
     except:
-        like=Like
+        like=Like()
         like.save()
     lusers=like.user.all()
     if(user in lusers):
